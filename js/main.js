@@ -2,6 +2,7 @@
 var address = 'n1PQsNSpCGTtPq4WKvMAaFdWpahRMFwFLvA';
 
 var author = "";
+var number = "";
 //测试网
 //var address = 'n1JaRjxBM7HZDXEbmnPcNWt5hTyeykKCzfL';
 
@@ -122,7 +123,7 @@ function createBall(){
 
 	ball[ball.length] = parseInt(Math.random() * 16, 10)
 
-	var number = "";
+
 	for(var i = 0; i < ball.length; i++) {
 		if(i != ball.length - 1) {
 			number += ball[i] + ","
@@ -158,17 +159,19 @@ function select(){
 		return;
 	}
 	
-	window.postMessage({
-        "target": "contentscript",
-        "data":{
-            "to" : address,
-            "value" : "0",
-            "contract" : {
-                "function" : "get",
-                "args" : "[\"" + add + "\"]"
-            }
-        },
-        "method": "neb_call"
-    }, "*");
+	alert(number);
+	
+//	window.postMessage({
+//      "target": "contentscript",
+//      "data":{
+//          "to" : address,
+//          "value" : "0",
+//          "contract" : {
+//              "function" : "get",
+//              "args" : "[\"" + add + "\"]"
+//          }
+//      },
+//      "method": "neb_call"
+//  }, "*");
 
 }
